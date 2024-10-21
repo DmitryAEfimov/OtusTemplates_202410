@@ -1,0 +1,16 @@
+[versions]
+testngVersion="7.10.2"
+mockitoCoreVersion="5.14.2"
+
+#Stat analize
+jacocoToolVersion = "0.8.12"
+checkstyleToolVersion = "10.12.4"
+
+[libraries]
+test-ng={module="org.testng:testng", version.ref="testngVersion"}
+mockito-core={module="org.mockito:mockito-core", version.ref="mockitoCoreVersion"}
+
+[bundles]
+testing = ["test-ng", "mockito-core"]
+
+[plugins]
