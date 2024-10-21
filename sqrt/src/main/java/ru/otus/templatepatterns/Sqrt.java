@@ -6,7 +6,7 @@ public class Sqrt {
     public double[] solve(double a, double b, double c, double epsilon) {
         validateParams(a, b, c, epsilon);
 
-        var positiveEpsilon = epsilon < 0 ? -epsilon : epsilon;
+        var positiveEpsilon = Math.abs(epsilon);
         var discriminant = calcDiscriminant(a, b, c);
 
         if (Math.abs(a) < positiveEpsilon) {

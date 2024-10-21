@@ -6,7 +6,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.mockito.MockitoAnnotations.openMocks;
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertThrows;
+import static org.testng.Assert.assertTrue;
 
 public class SqrtTest {
     private static final double EPSILON = 1.E-6;
@@ -32,6 +34,12 @@ public class SqrtTest {
     public void testSqrt_whenDiscriminantIsLessThenZero_shouldThrowException(double coefficient) {
         var sqrt = new Sqrt();
         assertThrows("Решение невозможно", IllegalArgumentException.class, () -> sqrt.solve(1.-coefficient, coefficient, 1.+coefficient, EPSILON));
+    }
+
+    @Test
+    public void testSqrt_whenEpsilonIsLessThenZero_shouldCompareWithAbsEpsilon() {
+        var sqrt = new Sqrt();
+        assertThrows("Решение невозможно", IllegalArgumentException.class, () -> sqrt.solve(1., 0, 1., -EPSILON));
     }
 
     @Test(dataProvider = "nearZeroProvider")
@@ -66,7 +74,7 @@ public class SqrtTest {
     @DataProvider(name = "notAFiniteProvider")
     private Object[][] notAFiniteProvider() {
         return new Object[][] {{Double.NaN, 1., 0, EPSILON},
-                               {1., Double.NEGATIVE_INFINITY, 0, -EPSILON},
+                               {1., Double.NEGATIVE_INFINITY, 0, EPSILON},
                                {1., 1., Double.POSITIVE_INFINITY, EPSILON},
                                {1., 1., 1., Double.NaN}};
     }
