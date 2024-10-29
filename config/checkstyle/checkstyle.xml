@@ -6,5 +6,8 @@
         <module name="AvoidStarImport">
             <property name="severity" value="error" />
         </module>
+        <module name="UnusedImports">
+            <property name="severity" value="error" />
+        </module>
     </module>
 </module>
