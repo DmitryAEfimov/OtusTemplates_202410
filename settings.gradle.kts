@@ -15,4 +15,4 @@ pluginManagement {
 }
 
 
-include("sqrt")
+include("sqrt", "solid")

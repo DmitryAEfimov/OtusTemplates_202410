@@ -1,16 +1,20 @@
 [versions]
 testngVersion="7.10.2"
 mockitoCoreVersion="5.14.2"
+assertJVersion="3.26.3"
 
 #Stat analize
-jacocoToolVersion = "0.8.12"
-checkstyleToolVersion = "10.12.4"
+jacocoToolVersion="0.8.12"
+checkstyleToolVersion="10.12.4"
+lombokVersion="1.18.34"
 
 [libraries]
+lombok={module="org.projectlombok:lombok", version.ref="lombokVersion"}
 test-ng={module="org.testng:testng", version.ref="testngVersion"}
 mockito-core={module="org.mockito:mockito-core", version.ref="mockitoCoreVersion"}
+assertj-core={module="org.assertj:assertj-core", version.ref="assertJVersion"}
 
 [bundles]
-testing = ["test-ng", "mockito-core"]
+testing = ["test-ng", "mockito-core", "assertj-core"]
 
 [plugins]
