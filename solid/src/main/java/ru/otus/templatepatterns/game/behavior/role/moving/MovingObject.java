@@ -1,6 +1,6 @@
-package otus.ru.templatepatterns.game.behavior.role.moving;
+package ru.otus.templatepatterns.game.behavior.role.moving;
 
-import otus.ru.templatepatterns.game.behavior.math.Vector;
+import ru.otus.templatepatterns.game.behavior.math.Vector;
 
 public interface MovingObject {
     void setPosition(Vector velocity);

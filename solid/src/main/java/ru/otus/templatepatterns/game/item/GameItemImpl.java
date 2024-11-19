@@ -1,4 +1,4 @@
-package otus.ru.templatepatterns.game.item;
+package ru.otus.templatepatterns.game.item;
 
 import java.util.HashMap;
 import java.util.Map;

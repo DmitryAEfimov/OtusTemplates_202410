@@ -1,4 +1,4 @@
-package otus.ru.templatepatterns.game.item;
+package ru.otus.templatepatterns.game.item;
 
 public interface GameItem {
     <T> T getProperty(String propertyName);

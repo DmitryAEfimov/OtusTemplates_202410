@@ -1,4 +1,4 @@
-package otus.ru.templatepatterns.game.behavior.math;
+package ru.otus.templatepatterns.game.behavior.math;
 
 /**
  * @param direction Направление движения

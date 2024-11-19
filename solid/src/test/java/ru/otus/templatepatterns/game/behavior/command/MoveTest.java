@@ -1,4 +1,4 @@
-package otus.ru.templatepatterns.game.behavior.command;
+package ru.otus.templatepatterns.game.behavior.command;
 
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
@@ -7,8 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import otus.ru.templatepatterns.game.behavior.math.Vector;
-import otus.ru.templatepatterns.game.behavior.role.moving.MovingObject;
+import ru.otus.templatepatterns.game.behavior.math.Vector;
+import ru.otus.templatepatterns.game.behavior.role.moving.MovingObject;
 
 import static org.assertj.core.api.Assertions.catchThrowable;
 import static org.mockito.ArgumentMatchers.any;

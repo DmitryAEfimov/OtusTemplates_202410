@@ -1,4 +1,4 @@
-package otus.ru.templatepatterns.game.item;
+package ru.otus.templatepatterns.game.item;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
