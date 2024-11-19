@@ -1,6 +1,7 @@
 package ru.otus.templatepatterns.game.behavior.command;
 
 import lombok.RequiredArgsConstructor;
+import ru.otus.templatepatterns.common.command.Command;
 import ru.otus.templatepatterns.game.behavior.math.Vector;
 import ru.otus.templatepatterns.game.behavior.role.moving.MovingObject;
 

@@ -1,0 +1,17 @@
+exceptionHandlerDictionary:
+  - exceptionContext:
+      command: "noCommandClass"
+      exception: "java.lang.RuntimeException"
+    exceptionHandler: "ru.otus.templatepatterns.common.command.LogWriter"
+  - exceptionContext:
+      command: "ru.otus.templatepatterns.game.behavior.command.Move"
+      exception: "noExceptionClass"
+    exceptionHandler: "ru.otus.templatepatterns.common.command.DelayedLogWriter"
+  - exceptionContext:
+      command: "noCommandClass"
+      exception: "noExceptionClass"
+    exceptionHandler: "ru.otus.templatepatterns.common.command.Repeat"
+  - exceptionContext:
+      command: "ru.otus.templatepatterns.game.behavior.command.Move"
+      exception: "java.lang.RuntimeException"
+    exceptionHandler: "noExceptionHandlerClass"

@@ -1,0 +1,4 @@
+exceptionHandlerDictionary:
+  - exceptionContext:
+      command: "ru.otus.templatepatterns.game.behavior.command.Move"
+    exceptionHandler: "ru.otus.templatepatterns.common.command.LogWriter"

@@ -1,20 +1,29 @@
 [versions]
-testngVersion="7.10.2"
-mockitoCoreVersion="5.14.2"
-assertJVersion="3.26.3"
+lombokVersion = "1.18.34"
+testngVersion = "7.10.2"
+mockitoCoreVersion = "5.14.2"
+assertJVersion = "3.26.3"
+snakeYamlVersion = "2.3"
+logbackVersion = "1.5.12"
+slfApiVersion = "2.0.16"
+systemLambdaVersion = "1.2.1"
 
 #Stat analize
-jacocoToolVersion="0.8.12"
-checkstyleToolVersion="10.12.4"
-lombokVersion="1.18.34"
+jacocoToolVersion = "0.8.12"
+checkstyleToolVersion = "10.12.4"
 
 [libraries]
-lombok={module="org.projectlombok:lombok", version.ref="lombokVersion"}
-test-ng={module="org.testng:testng", version.ref="testngVersion"}
-mockito-core={module="org.mockito:mockito-core", version.ref="mockitoCoreVersion"}
-assertj-core={module="org.assertj:assertj-core", version.ref="assertJVersion"}
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombokVersion" }
+test-ng = { module = "org.testng:testng", version.ref = "testngVersion" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion" }
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertJVersion" }
+snakeyaml = { module = "org.yaml:snakeyaml", version.ref = "snakeYamlVersion" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logbackVersion" }
+slf-api = { module = "org.slf4j:slf4j-api", version.ref = "slfApiVersion" }
+system-lambda = { module = "com.github.stefanbirkner:system-lambda", version.ref = "systemLambdaVersion" }
 
 [bundles]
-testing = ["test-ng", "mockito-core", "assertj-core"]
+testing = ["test-ng", "mockito-core", "assertj-core", "system-lambda"]
+logging = ["logback", "slf-api"]
 
 [plugins]
