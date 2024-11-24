@@ -57,6 +57,12 @@ subprojects {
                 csv.required.set(true)
             }
 
+            classDirectories.setFrom(files(classDirectories.files.map {
+                fileTree(it) {
+                    exclude(file("$rootDir/config/coverage/excludeCoverage").readLines())
+                }
+            }))
+
             dependsOn(test)
         }
 

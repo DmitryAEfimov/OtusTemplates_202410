@@ -4,6 +4,12 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### GigaIDE ###
+.gigaide/
+
+### Log ###
+*.log
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

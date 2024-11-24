@@ -1,0 +1,4 @@
+exceptionHandlerDictionary:
+  - exceptionContext:
+    exceptionHandler: "ru.otus.templatepatterns.common.command.LogWriter"
+  - exceptionHandler: "ru.otus.templatepatterns.common.command.LogWriter"

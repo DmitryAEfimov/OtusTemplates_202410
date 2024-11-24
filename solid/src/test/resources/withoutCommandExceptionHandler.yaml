@@ -1,0 +1,4 @@
+exceptionHandlerDictionary:
+  - exceptionContext:
+      exception: "java.lang.RuntimeException"
+    exceptionHandler: "ru.otus.templatepatterns.common.command.LogWriter"
