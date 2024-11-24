@@ -7,8 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import ru.otus.templatepatterns.game.behavior.math.Angle;
-import ru.otus.templatepatterns.game.behavior.math.AngularVelocity;
+import ru.otus.templatepatterns.game.behavior.attributes.Angle;
+import ru.otus.templatepatterns.game.behavior.attributes.AngularVelocity;
 import ru.otus.templatepatterns.game.behavior.role.rotating.RotatingObject;
 
 import static org.assertj.core.api.Assertions.catchThrowable;
