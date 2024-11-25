@@ -2,7 +2,7 @@ package ru.otus.templatepatterns.game.behavior.attributes;
 
 /**
  * @param direction
- *         Направление движения
+ *         Угол, описывающий ориентацию игрового объекта, либо направление движения
  */
 public record Angle(short direction) {
     public static Angle plus(Angle angle, AngularVelocity velocity) {
