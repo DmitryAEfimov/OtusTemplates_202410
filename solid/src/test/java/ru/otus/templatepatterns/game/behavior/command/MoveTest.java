@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import ru.otus.templatepatterns.game.behavior.math.Vector;
+import ru.otus.templatepatterns.game.behavior.attributes.Vector;
 import ru.otus.templatepatterns.game.behavior.role.moving.MovingObject;
 
 import static org.assertj.core.api.Assertions.catchThrowable;
