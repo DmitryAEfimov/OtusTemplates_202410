@@ -85,7 +85,9 @@ public class ComplexExceptionHandlerStrategyTest {
         var exceptionCaptor = ArgumentCaptor.forClass(Exception.class);
 
         executorService.submit(() -> {
-            when(mockExcHandlerRegistry.resolve(commandCaptor.capture(), exceptionCaptor.capture())).thenReturn(spyDelayedRepeat, spyDelayedLogWriter);
+            when(mockExcHandlerRegistry.resolve(commandCaptor.capture(), exceptionCaptor.capture())).thenReturn(
+                    spyDelayedRepeat,
+                    spyDelayedLogWriter);
             game.start();
         });
 
@@ -111,7 +113,10 @@ public class ComplexExceptionHandlerStrategyTest {
         var exceptionCaptor = ArgumentCaptor.forClass(Exception.class);
 
         executorService.submit(() -> {
-            when(mockExcHandlerRegistry.resolve(commandCaptor.capture(), exceptionCaptor.capture())).thenReturn(spyDelayedRepeat, spyRepeatLastTime, spyDelayedLogWriter);
+            when(mockExcHandlerRegistry.resolve(commandCaptor.capture(), exceptionCaptor.capture())).thenReturn(
+                    spyDelayedRepeat,
+                    spyRepeatLastTime,
+                    spyDelayedLogWriter);
             game.start();
         });
 

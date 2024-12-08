@@ -90,6 +90,11 @@ public class ExceptionHandlerResolverTest {
 
     @DataProvider(name = "illegalResourceProvider")
     private Object[][] illegalResourceProvider() {
-        return new Object[][] {{null}, {"absentResource"}, {"emptyExceptionHandler.yaml"}, {"topLevelKeyOnlyExceptionHandler.yaml"}};
+        return new Object[][] {
+                {null},
+                {"absentResource"},
+                {"emptyExceptionHandler.yaml"},
+                {"topLevelKeyOnlyExceptionHandler.yaml"}
+        };
     }
 }

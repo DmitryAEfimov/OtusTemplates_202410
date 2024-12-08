@@ -61,7 +61,9 @@ public class MoveTest {
     @Test
     public void execute_whenGetPositionFail_shouldThrowException() {
         when(mockException.getMessage()).thenReturn("getPositionException");
-        when(mockMoving.getPosition()).thenAnswer(invocation -> {throw mockException;});
+        when(mockMoving.getPosition()).thenAnswer(invocation -> {
+            throw mockException;
+        });
 
         var throwable = catchThrowable(() -> tested.execute());
 
@@ -72,7 +74,9 @@ public class MoveTest {
     @Test
     public void execute_whenGetVelocityFail_shouldThrowException() {
         when(mockException.getMessage()).thenReturn("getVelocityException");
-        when(mockMoving.getVelocity()).thenAnswer(invocation -> {throw mockException;});
+        when(mockMoving.getVelocity()).thenAnswer(invocation -> {
+            throw mockException;
+        });
 
         var throwable = catchThrowable(() -> tested.execute());
 
@@ -85,7 +89,9 @@ public class MoveTest {
         when(mockException.getMessage()).thenReturn("setPositionException");
         when(mockMoving.getPosition()).thenReturn(new Vector(1, 1));
         when(mockMoving.getVelocity()).thenReturn(new Vector(1, 1));
-        doAnswer(invocation -> {throw mockException;}).when(mockMoving).setPosition(any(Vector.class));
+        doAnswer(invocation -> {
+            throw mockException;
+        }).when(mockMoving).setPosition(any(Vector.class));
 
         var throwable = catchThrowable(() -> tested.execute());
 
@@ -95,9 +101,11 @@ public class MoveTest {
 
     @DataProvider(name = "vectorProvider")
     public Object[][] vectorProvider() {
-        return new Object[][] {{new Vector(0, 0), new Vector(0, 0), new Vector(0, 0)},
-                               {new Vector(0, 0), new Vector(1, 0), new Vector(1, 0)},
-                               {new Vector(0, -1), new Vector(-1, 0), new Vector(-1, -1)},
-                               {new Vector(12, 5), new Vector(-7, 3), new Vector(5, 8)}};
+        return new Object[][] {
+                {new Vector(0, 0), new Vector(0, 0), new Vector(0, 0)},
+                {new Vector(0, 0), new Vector(1, 0), new Vector(1, 0)},
+                {new Vector(0, -1), new Vector(-1, 0), new Vector(-1, -1)},
+                {new Vector(12, 5), new Vector(-7, 3), new Vector(5, 8)}
+        };
     }
 }

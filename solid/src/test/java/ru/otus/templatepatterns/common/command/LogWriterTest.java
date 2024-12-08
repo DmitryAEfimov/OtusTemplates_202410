@@ -50,7 +50,8 @@ public class LogWriterTest {
 
         var loggingEvent = logCaptor.event;
         assertEquals(loggingEvent.getLevel(), Level.ERROR);
-        assertEquals(loggingEvent.getFormattedMessage(), "Exception type java.io.IOException: mockIOException, command: ru.otus.templatepatterns.game.behavior.command.Move");
+        assertEquals(loggingEvent.getFormattedMessage(),
+                     "Exception type java.io.IOException: mockIOException, command: ru.otus.templatepatterns.game.behavior.command.Move");
     }
 
     private static class CapturingAppender extends AppenderBase<ILoggingEvent> {

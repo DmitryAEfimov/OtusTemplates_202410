@@ -64,7 +64,9 @@ public class RotateTest {
     @Test
     public void execute_whenGetPositionFail_shouldThrowException() {
         when(mockException.getMessage()).thenReturn("getAngleException");
-        when(mockRotating.getAngle()).thenAnswer(invocation -> {throw mockException;});
+        when(mockRotating.getAngle()).thenAnswer(invocation -> {
+            throw mockException;
+        });
 
         var throwable = catchThrowable(() -> tested.execute());
 
@@ -75,7 +77,9 @@ public class RotateTest {
     @Test
     public void execute_whenGetAngleFail_shouldThrowException() {
         when(mockException.getMessage()).thenReturn("getAngularVelocityException");
-        when(mockRotating.getAngularVelocity()).thenAnswer(invocation -> {throw mockException;});
+        when(mockRotating.getAngularVelocity()).thenAnswer(invocation -> {
+            throw mockException;
+        });
 
         var throwable = catchThrowable(() -> tested.execute());
 
@@ -88,7 +92,9 @@ public class RotateTest {
         when(mockException.getMessage()).thenReturn("setAngleException");
         when(mockRotating.getAngle()).thenReturn(new Angle((short) 1));
         when(mockRotating.getAngularVelocity()).thenReturn(new AngularVelocity(1, SECTOR_CNT));
-        doAnswer(invocation -> {throw mockException;}).when(mockRotating).setAngle(any(Angle.class));
+        doAnswer(invocation -> {
+            throw mockException;
+        }).when(mockRotating).setAngle(any(Angle.class));
 
         var throwable = catchThrowable(() -> tested.execute());
 
@@ -98,11 +104,13 @@ public class RotateTest {
 
     @DataProvider(name = "angleChangeProvider")
     public Object[][] angleChangeProvider() {
-        return new Object[][] {{new Angle((short) 0), new AngularVelocity(1, SECTOR_CNT), new Angle((short) 1)},
-                               {new Angle((short) 0),
-                                new AngularVelocity(SECTOR_CNT, SECTOR_CNT),
-                                new Angle((short) 0)},
-                               {new Angle((short) 5), new AngularVelocity(-13, SECTOR_CNT), new Angle((short) 12)},
-                               {new Angle((short) 5), new AngularVelocity(18, SECTOR_CNT), new Angle((short) 3)}};
+        return new Object[][] {
+                {new Angle((short) 0), new AngularVelocity(1, SECTOR_CNT), new Angle((short) 1)},
+                {
+                        new Angle((short) 0), new AngularVelocity(SECTOR_CNT, SECTOR_CNT), new Angle((short) 0)
+                },
+                {new Angle((short) 5), new AngularVelocity(-13, SECTOR_CNT), new Angle((short) 12)},
+                {new Angle((short) 5), new AngularVelocity(18, SECTOR_CNT), new Angle((short) 3)}
+        };
     }
 }

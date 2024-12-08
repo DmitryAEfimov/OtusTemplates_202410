@@ -30,9 +30,12 @@ public class ExceptionHandlerDictionary implements BiFunction<Command, Exception
         Optional.ofNullable(exc).map(Exception::getClass).ifPresent(exceptionClass -> {
             Class<?> currentExceptionClass = exceptionClass;
             while (BASE_EXCEPTION_CLASS.isAssignableFrom(currentExceptionClass)) {
-                var matchedContext = new ExceptionContext(commandClass, (Class<? extends Exception>) currentExceptionClass);
-                var defaultExceptionContext = new ExceptionContext(null, (Class<? extends Exception>) currentExceptionClass);
-                var value = exceptionRegistry.getOrDefault(matchedContext, exceptionRegistry.get(defaultExceptionContext));
+                var matchedContext = new ExceptionContext(commandClass,
+                                                          (Class<? extends Exception>) currentExceptionClass);
+                var defaultExceptionContext = new ExceptionContext(null,
+                                                                   (Class<? extends Exception>) currentExceptionClass);
+                var value = exceptionRegistry.getOrDefault(matchedContext,
+                                                           exceptionRegistry.get(defaultExceptionContext));
                 if (value != null) {
                     handler[0] = value;
                     break;
@@ -41,7 +44,9 @@ public class ExceptionHandlerDictionary implements BiFunction<Command, Exception
             }
         });
         var producer = handler[0] != null ? handler[0]
-                                          : exceptionRegistry.getOrDefault(new ExceptionContext(commandClass, null), exceptionRegistry.get(DEFAULT_EXCEPTION_CONTEXT));
+                                          : exceptionRegistry.getOrDefault(new ExceptionContext(commandClass, null),
+                                                                           exceptionRegistry.get(
+                                                                                   DEFAULT_EXCEPTION_CONTEXT));
 
         return producer.apply(cmd, exc);
     }
@@ -51,7 +56,9 @@ public class ExceptionHandlerDictionary implements BiFunction<Command, Exception
         Optional.ofNullable(context).map(ExceptionContext::exceptionClass).ifPresentOrElse(exceptionClass -> {
             Class<?> currentExceptionClass = exceptionClass;
             while (BASE_EXCEPTION_CLASS.isAssignableFrom(currentExceptionClass)) {
-                var previous = exceptionRegistry.putIfAbsent(new ExceptionContext(commandClass, (Class<? extends Exception>) currentExceptionClass), producer);
+                var previous = exceptionRegistry.putIfAbsent(new ExceptionContext(commandClass,
+                                                                                  (Class<? extends Exception>) currentExceptionClass),
+                                                             producer);
                 if (previous != null) {
                     break;
                 }

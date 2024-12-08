@@ -32,8 +32,10 @@ public class GameItemImplTest {
 
     @DataProvider
     private Object[][] objectProvider() {
-        return new Object[][] {{"value", String.class},
-                               {10, Integer.class},
-                               {new BigDecimal("145.344556547").setScale(2, RoundingMode.HALF_EVEN), BigDecimal.class}};
+        return new Object[][] {
+                {"value", String.class},
+                {10, Integer.class},
+                {new BigDecimal("145.344556547").setScale(2, RoundingMode.HALF_EVEN), BigDecimal.class}
+        };
     }
 }
