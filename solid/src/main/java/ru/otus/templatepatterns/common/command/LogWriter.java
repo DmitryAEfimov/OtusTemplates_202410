@@ -14,7 +14,9 @@ public class LogWriter implements Command {
 
     @Override
     public void execute() {
-        LOGGER.error(EXCEPTION_LOG_TEMPLATE, exception.getClass().getName(), exception.getMessage(), command.getClass()
-                                                                                                            .getName());
+        LOGGER.error(EXCEPTION_LOG_TEMPLATE,
+                     exception.getClass().getName(),
+                     exception.getMessage(),
+                     command.getClass().getName());
     }
 }

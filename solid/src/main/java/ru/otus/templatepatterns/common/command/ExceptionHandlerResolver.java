@@ -45,9 +45,10 @@ public class ExceptionHandlerResolver {
         var nullSafeContext = rawContext != null ? parseContext(rawContext) : new ExceptionContext(null, null);
 
         var rawHandler = (String) row.get("exceptionHandler");
-        BiFunction<Command, Exception, Command> nullSafeHandler = (cmd, exc) -> rawHandler != null
-                                                                                ? parseHandler(parseForClass(rawHandler, Command.class), cmd, exc)
-                                                                                : new ConsoleWriter(cmd, exc);
+        BiFunction<Command, Exception, Command> nullSafeHandler = (cmd, exc) -> rawHandler != null ? parseHandler(
+                parseForClass(rawHandler, Command.class),
+                cmd,
+                exc) : new ConsoleWriter(cmd, exc);
 
         handlerDictionary.add(nullSafeContext, nullSafeHandler);
     }

@@ -18,11 +18,11 @@ public class Sqrt {
         }
 
         if (Math.abs(discriminant) < positiveEpsilon) {
-            return new double[] {-c/a, -c/a};
+            return new double[] {-c / a, -c / a};
         }
 
-        var x1 = (-b+Math.sqrt(discriminant))/(2*a*c);
-        var x2 = (-b-Math.sqrt(discriminant))/(2*a*c);
+        var x1 = (-b + Math.sqrt(discriminant)) / (2 * a * c);
+        var x2 = (-b - Math.sqrt(discriminant)) / (2 * a * c);
 
         return new double[] {x1, x2};
     }
@@ -43,6 +43,6 @@ public class Sqrt {
     }
 
     private double calcDiscriminant(double a, double b, double c) {
-        return Math.pow(b, 2)-4*a*c;
+        return Math.pow(b, 2) - 4 * a * c;
     }
 }
